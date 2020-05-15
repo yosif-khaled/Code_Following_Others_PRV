@@ -1,7 +1,7 @@
 // Grabbing DOM elements
 const wordElement = document.getElementById('word');
 const wrongLettersElement = document.getElementById('wrong-letters');
-const playAgianBtn = document.getElementById('play-again');
+const playAgianBtn = document.getElementById('play-button');
 const popup = document.getElementById('popup-container');
 const notification = document.getElementById('notification-container');
 const finalMessage = document.getElementById('final-message');
@@ -44,7 +44,25 @@ function displayWord() {
 
 // Updating Wrong Letter Element
 function updateWrongLettersElement(){
-	console.log('Update Wrong Letters');
+	wrongLettersElement.innerHTML = `
+		${wrongLetters.length > 0 ? '<p>wrong</p>' : ''}
+		${wrongLetters.map(letter => `<span>${letter}</span>`)}
+	`;
+
+	figureParts.forEach((part, index) => {
+		const errors = wrongLetters.length;
+
+		if(index < errors){
+			part.style.display  = 'block';
+		} else {
+			part.style.display = 'none';
+		}
+
+	if(wrongLetters.length === figureParts.length){
+		finalMessage.innerText = 'Unfortunatly You LOST!!';
+		popup.style.display = 'flex';
+	}
+	})
 }
 
 // Show Notification
@@ -56,9 +74,10 @@ function showNotification(){
 
 // Reading Keys
 window.addEventListener('keydown', event => {
-	const letter = event.key;
+
 	if(event.keyCode >= 65 && event.keyCode <= 90){
-		console.log(letter);
+		const letter = event.key;
+
 	 	if(selectedWord.includes(letter)){
 
 	 		if(!correctLetters.includes(letter)){
@@ -68,15 +87,31 @@ window.addEventListener('keydown', event => {
 	 			showNotification();
 	 		}
 	 	} else {
+
 		  if(!wrongLetters.includes(letter)){
 		 		wrongLetters.push(letter);
 		 		updateWrongLettersElement();
 		 	} else {
 		 		showNotification();
 		 	}
+
 	 	}
 	}
-})
+});
+
+// Restart Game
+playAgianBtn.addEventListener('click', () =>{
+	correctLetters.splice(0);
+	wrongLetters.splice(0);
+
+	selectedWord = words[Math.floor(Math.random() * words.length)]
+
+	displayWord();
+
+	updateWrongLettersElement();
+
+	popup.style.display = 'none';
+});
 
 console.log(wrongLetters);
 console.log(correctLetters);
