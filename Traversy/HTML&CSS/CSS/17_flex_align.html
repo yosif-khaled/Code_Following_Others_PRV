@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Flex Align</title>
+  
+  <style>
+
+    #container{
+      background: #555;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      /* 
+      Options:
+      flex-start -- align left
+      flex-end -- align right
+      center -- align to center
+      space-around -- will divide space between each one
+      space-between -- will divide making space in between them
+      space-evenly -- will divide space evenly between items
+      */
+      height: 600px;
+      align-items: stretch;
+      /*
+      for align-items to work you need to assign height
+      flex-start -- align to top
+      flex-end -- align to bottom
+      center -- align to center
+      baseline -- similar to align start
+      stretch -- will stretch them from top to bottom of container div
+      */
+      align-content: flex-start;
+      /*
+      Aligns Items vertical when there is extra space
+      flex-start
+      flex-end
+      center
+      space-between
+      space-around
+      stretch
+      */
+    }
+
+    .item-1{
+      order: 3;
+    }
+
+    .item-2{
+      align-self: center;
+      /* Same options as align-items */
+      order: 2;
+    }
+
+    .item-3{
+      order: 1;
+    }
+
+    .item{
+      background: #f4f4f4;
+      border: #ccc solid 1px;
+      padding: 1rem;
+      margin: .5rem;
+      flex-basis: 200px;
+      /* width: 200px; does same thing as flex-basis */}
+
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <div class="item item-1"><h3>Item 1</h3></div>
+    <div class="item item-2"><h3>Item 2</h3></div>
+    <div class="item item-3"><h3>Item 3</h3></div>
+  </div>
+</body>
+</html>
