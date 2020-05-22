@@ -1,0 +1,9 @@
+/* I don't like doing things this way */
+
+body{
+    background: darkgray;
+  }
+
+#normal h1{
+    display: block;
+}

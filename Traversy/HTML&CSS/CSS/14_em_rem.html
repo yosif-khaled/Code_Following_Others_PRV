@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Em & Rem Units</title>
+
+  <style>
+    *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html{
+      font-size: 62.5%;
+      /* Also means */
+      font-size: 10px;
+    }
+
+    .container{
+      display: block;
+    }
+
+    #box-1{
+      float: right;
+      width: 400px;
+      padding: 1rem;
+      margin: 1rem;
+      border: .1rem solid black;
+    }
+
+    .clr{
+      clear: both;
+    }
+
+    #box-2{
+      float: left;
+      width: 400px;
+      padding: 1rem;
+      margin: 1rem;
+      border: .1rem solid black;
+    }
+
+    #box-2 h3{
+      font-size: 2rem;
+    }
+
+    #box-2 p{
+      font-size: 1.5rem;
+    }
+
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <div id="box-1">
+      <h3>Box One</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem aspernatur adipisci nam sequi dolorum iure. Est deserunt dolores sequi error?</p>
+    </div>
+    <div id="box-2">
+      <h3>Box Two</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem aspernatur adipisci nam sequi dolorum iure. Est deserunt dolores sequi error?</p>
+    </div>
+  </div>
+</body>
+</html>
+
+<!-- Always Use rem -->
