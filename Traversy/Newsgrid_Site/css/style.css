@@ -190,6 +190,10 @@ p{
     grid-row: 1 / span 3;
 }
 
+.l-heading{
+    font-size: 3rem;
+}
+
 /* Navigation */
 #main-nav{
     background: #fff;
@@ -292,6 +296,19 @@ p{
 #home-articles .articles-container > *:last-child{
     grid-column: 2 / span 2;
 }
+
+#article .meta{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #eee;
+    padding: .5rem;
+}
+
+#article .meta .category{
+    margin-top: .4rem;
+}
+
 
 /* Footer */
 #main-footer{
