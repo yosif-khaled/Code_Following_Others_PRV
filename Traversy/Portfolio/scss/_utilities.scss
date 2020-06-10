@@ -1,6 +1,6 @@
 .container{
     max-width: $website-width;
-    padding: 1.5rem;
+    padding: 0 1.5rem;
     margin: auto;
     overflow: hidden;
 }
@@ -47,4 +47,52 @@ input[class^='btn-']:hover{
 
 .text-center{
     text-align: center;
+}
+
+// Padding
+.py{
+    &-1{
+        padding: 1rem 0rem;
+    }
+    &-2{
+        padding: 2rem 0rem;
+    }
+    &-3{
+        padding: 3rem 0rem;
+    }
+    &-4{
+        padding: 4rem 0rem;
+    }
+}
+// Margin
+.my{
+    &-1{
+        margin: 1rem 0rem;
+    }
+    &-2{
+        margin: 2rem 0rem;
+    }
+    &-3{
+        margin: 3rem 0rem;
+    }
+    &-4{
+        margin: 4rem 0rem;
+    }
+}
+
+.section-title{
+    font-size: 2rem;
+    display: block;
+    padding-bottom: .5rem;
+    text-align: center;
+    font-weight: 100;
+    text-transform: upper-case;
+}
+
+.bottom-line{
+    height: 2px;
+    width: 3rem;
+    background: $main-color;
+    display: block;
+    margin: 0 auto 1rem auto;
 }
