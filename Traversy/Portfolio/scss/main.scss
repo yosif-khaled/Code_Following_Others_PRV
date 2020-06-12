@@ -1,5 +1,6 @@
 @import 'config';
 @import 'utilities';
+@import 'item_grid';
 
 // General Styles
 *{
@@ -256,8 +257,48 @@ img{
     }
   }
 
-  
+  &-c{
+    .about-logos{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+
+      img{
+        width: 70%;
+      }
+    }
+  }
+
+  &-d{
+    .testimonials{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: .5rem;
+
+      ul{
+        list-style: none;
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+      }
+
+      p{
+        border: 1px solid $medium-color;
+        border-radius: 5px;
+        padding: .5rem;
+      }
+
+      img{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: .5rem;
+      }
+    }
+  }
 }
+
+// Work
 
 // Footer
 #main-footer{
